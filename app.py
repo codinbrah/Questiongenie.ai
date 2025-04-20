@@ -1,6 +1,6 @@
 import streamlit as st
-from PIL import Image
-import pytesseract
+from PIL import image
+import easyocr
 from transformers import pipeline
 
 # Function to extract text from image

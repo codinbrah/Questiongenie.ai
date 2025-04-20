@@ -14,7 +14,7 @@ def extract_text(image_path):
 
 # Function to generate questions from extracted text
 def generate_questions(text):
-    question_generator = pipeline("text2text-generation", model="valhalla/t5-base-qg-hl")
+   question_generator = pipeline("text2text-generation", model="t5-small")
     result = question_generator(text, num_return_sequences=5, num_beams=5)
     questions = [r['generated_text'] for r in result]
     return questions

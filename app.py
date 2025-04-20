@@ -4,10 +4,13 @@ import easyocr
 from transformers import pipeline
 
 # Function to extract text from image
+# Function to extract text from image using EasyOCR
 def extract_text(image_path):
-    img = Image.open(image_path)
-    text = pytesseract.image_to_string(img)
+    reader = easyocr.Reader(['en'], gpu=False)
+    results = reader.readtext(image_path, detail=0)
+    text = " ".join(results)
     return text
+
 
 # Function to generate questions from extracted text
 def generate_questions(text):

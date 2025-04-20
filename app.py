@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import image
+from PIL import Image
 import easyocr
 from transformers import pipeline
 
